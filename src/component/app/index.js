@@ -1,13 +1,21 @@
 import React from 'react';
-import { NetworkProvider } from '../../context';
+import { UIProvider } from '../../context';
+import Description from '../description';
 import Main from '../main';
+import { Page, globalStyles } from '../../styles';
+
 
 function App() {
     return (
         <div className="App">
-            <NetworkProvider>
-                <Main />
-            </NetworkProvider>
+            <globalStyles>
+                <UIProvider>
+                    <Page>
+                        <Description />
+                        <Main />
+                    </Page>
+                </UIProvider>
+            </globalStyles>
         </div>
     );
 }
